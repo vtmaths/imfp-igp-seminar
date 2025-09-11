@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /* Style global */\
+body \{\
+  font-family: "Segoe UI", Arial, sans-serif;\
+  margin: 0;\
+  padding: 0;\
+  line-height: 1.6;\
+  color: #333;\
+  background-color: #f4f6f8;\
+\}\
+\
+/* Header */\
+header \{\
+  background: linear-gradient(135deg, #002855, #004080);\
+  color: white;\
+  padding: 20px 0;\
+  text-align: center;\
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);\
+\}\
+\
+header h1 \{\
+  margin: 0;\
+  font-size: 2.5em;\
+  font-weight: bold;\
+\}\
+\
+header nav \{\
+  margin-top: 10px;\
+\}\
+\
+header nav a \{\
+  color: #e0f0ff;\
+  text-decoration: none;\
+  margin: 0 12px;\
+  font-weight: 500;\
+  transition: color 0.3s;\
+\}\
+\
+header nav a:hover \{\
+  color: #ffcc00;\
+\}\
+\
+/* Contenu principal */\
+main \{\
+  max-width: 900px;\
+  margin: 30px auto;\
+  padding: 20px;\
+  background: white;\
+  border-radius: 12px;\
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);\
+\}\
+\
+h2 \{\
+  color: #003366;\
+  margin-bottom: 10px;\
+  border-bottom: 2px solid #003366;\
+  padding-bottom: 5px;\
+\}\
+\
+/* Liste des s\'e9minaires */\
+.seminar-list \{\
+  list-style: none;\
+  padding-left: 0;\
+\}\
+\
+.seminar-list li \{\
+  margin-bottom: 25px;\
+  padding: 15px;\
+  border-left: 4px solid #004080;\
+  background: #f9fbfd;\
+  border-radius: 6px;\
+\}\
+\
+.seminar-list .date \{\
+  font-size: 0.9em;\
+  color: #555;\
+  margin-bottom: 5px;\
+\}\
+\
+.seminar-list .title \{\
+  font-weight: bold;\
+  font-size: 1.2em;\
+  margin-bottom: 5px;\
+  color: #002244;\
+\}\
+\
+.seminar-list .abstract \{\
+  font-size: 0.95em;\
+  color: #444;\
+\}\
+\
+/* Pied de page */\
+footer \{\
+  text-align: center;\
+  margin: 40px 0 10px;\
+  font-size: 0.85em;\
+  color: #777;\
+\}\
+\
+/* Responsive */\
+@media (max-width: 600px) \{\
+  header h1 \{\
+    font-size: 1.8em;\
+  \}\
+  header nav a \{\
+    display: block;\
+    margin: 5px 0;\
+  \}\
+  main \{\
+    margin: 15px;\
+    padding: 15px;\
+  \}\
+\}\
+}
