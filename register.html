@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IMFP-IGP Seminar — Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="IMFP-IGP Logo" class="logo">
+    <h1>IMFP-IGP Seminar — Registration</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="location.html">Location</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="upcoming.html">Upcoming Seminars</a>
+      <a href="past.html">Past Seminars</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="register">
+      <h2>Register for a Seminar</h2>
+      <p>Dear invited speaker, please select the date you want to participate in and fill in your information. Your registration details will be sent directly to the organizers.</p>
+
+      <form action="https://formspree.io/f/xovnbeqw" method="POST">
+        <input type="hidden" name="_subject" value="IMFP-IGP Seminar Registration">
+        <input type="hidden" name="date" id="seminar-date" value="">
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="institution">Institution:</label>
+        <input type="text" id="institution" name="institution">
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 IMFP-IGP Seminar — All rights reserved
+  </footer>
+
+  <script>
+    // Récupère la date passée en paramètre d'URL
+    const params = new URLSearchParams(window.location.search);
+    const dateParam = params.get('date');
+    if(dateParam) {
+      document.getElementById('seminar-date').value = dateParam.replace(/\+/g, ' ');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Talk Abstract — IMFP-IGP Seminar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="IMFP-IGP Logo" class="logo">
+    <h1>IMFP-IGP Seminar</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="location.html">Location</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="upcoming.html">Upcoming Seminars</a>
+      <a href="past.html">Past Seminars</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="submit-abstract">
+      <h2>Dear invited speaker, please submit your talk abstract here</h2>
+      <p>Please fill out the form below. Your name and the seminar date will automatically be included in the submission.</p>
+      <form action="https://formspree.io/f/xovnbeqw" method="POST">
+        <label for="date">Seminar Date</label>
+        <input type="text" id="date" name="Seminar Date" readonly>
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="Name" placeholder="Full Name" required>
+
+        <label for="title">Talk Title</label>
+        <input type="text" id="title" name="Talk Title" placeholder="Title of your talk" required style="font-size:1.2em; padding:8px;">
+
+        <label for="abstract">Talk Abstract</label>
+        <textarea id="abstract" name="Talk Abstract" placeholder="Please enter your abstract here" rows="10" style="font-size:1.2em; padding:8px;" required></textarea>
+
+        <button type="submit">Submit Abstract</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 IMFP-IGP Seminar — All rights reserved
+  </footer>
+
+  <script>
+    // Récupérer la date depuis l'URL et la mettre dans le formulaire
+    const urlParams = new URLSearchParams(window.location.search);
+    const dateParam = urlParams.get('date');
+    if(dateParam) {
+      document.getElementById('date').value = decodeURIComponent(dateParam.replace(/\+/g, ' '));
+    }
+  </script>
+</body>
+</html>
