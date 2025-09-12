@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,59 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <style>
-    form {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #f9fbfd;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #003366;
-    }
-
-    input[type="text"],
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-      line-height: 1.4;
-      margin-bottom: 15px;
-    }
-
-    textarea {
-      height: 300px; /* fenêtre grande pour le talk abstract */
-      resize: vertical;
-    }
-
-    button {
-      padding: 12px 20px;
-      background-color: #004080;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #002855;
-    }
-
-    p.instructions {
-      max-width: 700px;
-      margin: 20px auto;
-      font-size: 1em;
-      color: #333;
-    }
+    form { max-width: 700px; margin: 20px auto; padding: 20px; background: #f9fbfd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: #003366;}
+    input[type="text"], textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; margin-bottom: 15px;}
+    textarea { height: 300px; resize: vertical;}
+    button { padding: 12px 20px; background-color: #004080; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; transition: background 0.3s;}
+    button:hover { background-color: #002855;}
+    p.instructions { max-width: 700px; margin: 20px auto; font-size: 1em; color: #333;}
   </style>
 </head>
 <body>
@@ -76,8 +31,8 @@
 
   <main>
     <p class="instructions">
-      Dear invited speaker, please submit your title and abstract below.  
-      You do not need to re-enter your personal information — it has already been recorded during registration.
+      Dear invited speaker, please submit your **talk title** and **talk abstract** below.  
+      The seminar date is automatically recorded from the link you clicked.
     </p>
 
     <form action="https://formspree.io/f/xovnbeqw" method="POST">
@@ -87,8 +42,19 @@
       <label for="abstract">Talk Abstract:</label>
       <textarea id="abstract" name="abstract" placeholder="Type your talk abstract here..." required></textarea>
 
+      <!-- Champ caché pour la date -->
+      <input type="hidden" id="seminar_date" name="seminar_date" value="">
+
       <button type="submit">Submit Abstract</button>
     </form>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get('date');
+      if(date) {
+        document.getElementById('seminar_date').value = date;
+      }
+    </script>
   </main>
 
   <footer>
