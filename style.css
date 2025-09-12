@@ -1,3 +1,4 @@
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
@@ -21,16 +22,13 @@ header img.logo {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  height: 60px; /* agrandi */
+  height: 70px; /* logo agrandi */
 }
 
 header h1 {
   margin: 0;
   font-size: 2.5em;
   font-weight: bold;
-  display: inline-block;
-  vertical-align: middle; /* logo à côté */
-  margin-left: 20px;
 }
 
 header nav {
@@ -85,9 +83,10 @@ h2 {
 }
 
 .seminar-list .author {
-  font-style: italic;
   font-weight: bold;
-  margin-bottom: 3px;
+  font-size: 1.2em;   /* même taille que le titre */
+  color: #002244;     /* même bleu que le titre */
+  margin-bottom: 5px;
 }
 
 .seminar-list .title {
@@ -100,7 +99,7 @@ h2 {
 .seminar-list .abstract {
   font-size: 0.95em;
   color: #444;
-  text-align: justify; /* justification du texte */
+  text-align: justify;
 }
 
 .seminar-list .abstract a {
@@ -165,8 +164,6 @@ footer {
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8em;
-    display: block;
-    margin-left: 0;
   }
   header nav a {
     display: block;
@@ -179,7 +176,5 @@ footer {
   header img.logo {
     height: 50px;
     left: 10px;
-    top: 10px;
-    transform: none;
   }
 }
