@@ -86,6 +86,12 @@ h2 {
   color: #002244;
 }
 
+.seminar-list .abstract {
+  font-size: 0.95em;
+  color: #444;
+  text-align: justify; /* justification du texte */
+}
+
 .seminar-list .abstract a {
   font-size: 1em;
   color: #004080;
