@@ -1,49 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IMFP-IGP Seminar — Register</title>
+  <title>IMFP-IGP Seminar — Registration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    form { max-width: 700px; margin: 20px auto; padding: 20px; background: #f9fbfd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
+    label { display: block; margin-bottom: 8px; font-weight: bold; color: #003366;}
+    input[type="text"], input[type="email"] { width: 48%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; margin-bottom: 15px; display: inline-block;}
+    .full-width { width: 100%;}
+    button { padding: 12px 20px; background-color: #004080; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; transition: background 0.3s;}
+    button:hover { background-color: #002855;}
+  </style>
 </head>
 <body>
-<header>
-  <img src="logo.png" alt="IMFP-IGP Logo" class="logo">
-  <h1>IMFP-IGP Seminar Registration</h1>
-  <nav>
-    <a href="index.html">About</a>
-    <a href="location.html">Location</a>
-    <a href="organizers.html">Organizers</a>
-    <a href="upcoming.html">Upcoming Seminars</a>
-    <a href="past.html">Past Seminars</a>
-  </nav>
-</header>
-<main>
-  <h2>Register as an Invited Speaker</h2>
-  <p>Please fill in your information below. You can submit your talk abstract later by clicking the link on the upcoming seminar page.</p>
-  
-  <form action="https://formspree.io/f/xovnbeqw" method="POST">
-    <div class="form-row">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="First Name" required>
-    </div>
-    <div class="form-row">
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="Last Name" required>
-    </div>
-    <div class="form-row">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="Email" required>
-    </div>
-    <div class="form-row">
-      <label for="institution">Institution</label>
-      <input type="text" id="institution" name="Institution" required>
-    </div>
-    <button type="submit">Submit Registration</button>
-  </form>
-</main>
-<footer>
-  &copy; 2025 IMFP-IGP Seminar — All rights reserved
-</footer>
+  <header>
+    <img src="logo.png" alt="IMFP-IGP Logo" class="logo">
+    <h1>IMFP-IGP Seminar Registration</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="location.html">Location</a>
+      <a href="organizers.html">Organizers</a>
+      <a href="upcoming.html">Upcoming Seminars</a>
+      <a href="past.html">Past Seminars</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>Please fill in your information to register for the seminar. The seminar date is automatically recorded from the link you clicked.</p>
+
+    <form action="https://formspree.io/f/xovnbeqw" method="POST">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="firstname" required>
+
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="full-width" required>
+
+      <label for="institution">Institution:</label>
+      <input type="text" id="institution" name="institution" class="full-width" required>
+
+      <!-- Champ caché pour la date -->
+      <input type="hidden" id="seminar_date" name="seminar_date" value="">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get('date');
+      if(date) {
+        document.getElementById('seminar_date').value = date;
+      }
+    </script>
+  </main>
+
+  <footer>
+    &copy; 2025 IMFP-IGP Seminar — All rights reserved
+  </footer>
 </body>
 </html>
