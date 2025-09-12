@@ -6,20 +6,11 @@
   <title>IMFP-IGP Seminar — Submit Your Talk Abstract</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <style>
-    form { max-width: 700px; margin: 20px auto; padding: 20px; background: #f9fbfd; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);}
-    label { display: block; margin-bottom: 8px; font-weight: bold; color: #003366;}
-    input[type="text"], textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; margin-bottom: 15px;}
-    textarea { height: 300px; resize: vertical;}
-    button { padding: 12px 20px; background-color: #004080; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; transition: background 0.3s;}
-    button:hover { background-color: #002855;}
-    p.instructions { max-width: 700px; margin: 20px auto; font-size: 1em; color: #333;}
-  </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="IMFP-IGP Logo" class="logo">
-    <h1>IMFP-IGP Seminar</h1>
+    <h1>Submit Your Talk Abstract</h1>
     <nav>
       <a href="index.html">About</a>
       <a href="location.html">Location</a>
@@ -28,37 +19,39 @@
       <a href="past.html">Past Seminars</a>
     </nav>
   </header>
-
   <main>
-    <p class="instructions">
-      Dear invited speaker, please submit your **talk title** and **talk abstract** below.  
-      The seminar date is automatically recorded from the link you clicked.
-    </p>
+    <section>
+      <h2>Dear invited speaker, please submit your talk abstract <a href="#">here</a></h2>
+      <p>Please provide the title and abstract of your talk. The organizers will be notified with your name and the seminar date you selected.</p>
+      <form action="https://formspree.io/f/xovnbeqw" method="POST">
+        <input type="hidden" name="_subject" value="New Talk Abstract Submission">
+        <input type="hidden" name="seminar-date" id="seminar-date" value="">
+        <input type="hidden" name="speaker-name" id="speaker-name" value="">
 
-    <form action="https://formspree.io/f/xovnbeqw" method="POST">
-      <label for="title">Title of Talk:</label>
-      <input type="text" id="title" name="title" placeholder="Enter the title of your talk" required>
+        <div class="form-row">
+          <label for="talk-title">Talk Title:</label>
+          <input type="text" name="talk-title" id="talk-title" required>
+        </div>
 
-      <label for="abstract">Talk Abstract:</label>
-      <textarea id="abstract" name="abstract" placeholder="Type your talk abstract here..." required></textarea>
+        <div class="form-row">
+          <label for="talk-abstract">Talk Abstract:</label>
+          <textarea name="talk-abstract" id="talk-abstract" rows="10" required></textarea>
+        </div>
 
-      <!-- Champ caché pour la date -->
-      <input type="hidden" id="seminar_date" name="seminar_date" value="">
-
-      <button type="submit">Submit Abstract</button>
-    </form>
-
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const date = params.get('date');
-      if(date) {
-        document.getElementById('seminar_date').value = date;
-      }
-    </script>
+        <button type="submit">Submit Abstract</button>
+      </form>
+    </section>
   </main>
-
   <footer>
     &copy; 2025 IMFP-IGP Seminar — All rights reserved
   </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const date = urlParams.get('date');
+    if(date) {
+      document.getElementById('seminar-date').value = date;
+    }
+  </script>
 </body>
 </html>
