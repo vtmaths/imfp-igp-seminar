@@ -6,6 +6,57 @@
   <title>IMFP-IGP Seminar — Submit Your Talk Abstract</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles spécifiques pour le formulaire de soumission */
+    form {
+      max-width: 700px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .form-row label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 1.1em;
+    }
+
+    .form-row input[type="text"],
+    .form-row textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-row textarea {
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      padding: 12px 20px;
+      font-size: 1.1em;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #002855;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,12 +81,12 @@
 
         <div class="form-row">
           <label for="talk-title">Talk Title:</label>
-          <input type="text" name="talk-title" id="talk-title" required>
+          <input type="text" name="talk-title" id="talk-title" placeholder="Enter the title of your talk" required>
         </div>
 
         <div class="form-row">
           <label for="talk-abstract">Talk Abstract:</label>
-          <textarea name="talk-abstract" id="talk-abstract" rows="10" required></textarea>
+          <textarea name="talk-abstract" id="talk-abstract" rows="12" placeholder="Enter the abstract of your talk" required></textarea>
         </div>
 
         <button type="submit">Submit Abstract</button>
@@ -47,6 +98,7 @@
   </footer>
 
   <script>
+    // Récupère la date depuis l'URL et l'insère dans le champ caché
     const urlParams = new URLSearchParams(window.location.search);
     const date = urlParams.get('date');
     if(date) {
